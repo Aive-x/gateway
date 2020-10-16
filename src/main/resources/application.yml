@@ -1,0 +1,13 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: user
+          uri: http://127.0.0.1:8080
+          predicates:
+            - Path=/user/**
+          filters:
+            - StripPrefix=1
+
+server:
+  port: 8087
